@@ -181,6 +181,97 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-iOS 高德地图集成" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/29/iOS 高德地图集成/">iOS 高德地图SDK集成初试</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/29/iOS 高德地图集成/" class="archive-article-date">
+  	<time datetime="2018-09-29T07:07:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>入职新公司后接手的新项目使用OC开发，项目主要功能里涉及地图开发，技术选型上使用<a href="https://lbs.amap.com/" target="_blank" rel="noopener">高德地图服务</a>，本篇博客主要记录高德地图SDK的集成以及相关使用。
+        
+          <a class="article-more-a" href="/2018/09/29/iOS 高德地图集成/#more">更多 >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/技术开发//" class="article-tag-list-link color5">技术开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/29/iOS 高德地图集成/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-在Swift4中使用JSPatch" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1011,94 +1102,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-swift之泛型学习（二）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/25/swift之泛型学习（二）/">swift之泛型学习（二）</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/25/swift之泛型学习（二）/" class="archive-article-date">
-  	<time datetime="2018-01-25T04:45:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="下标支持泛型"><a href="#下标支持泛型" class="headerlink" title="下标支持泛型"></a>下标支持泛型</h3><p>由于需要转换字典的每一个值,在swift3中使用混合数据类型的字典是相当痛苦的工作,而在swift4允许下标操作返回一个泛型类型。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">struct Grade &#123;</span><br><span class="line">    private var data: [String: Any]</span><br><span class="line">    init(data: [String: Any]) &#123;</span><br><span class="line">        self.data = data</span><br><span class="line">    &#125;</span><br><span class="line">    subscript&lt;T&gt;(key: String) -&gt; T? &#123;</span><br><span class="line">        return data[key] as? T</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let gradebook = Grade(data: [&quot;name&quot;: &quot;Neil Armstrong&quot;,</span><br><span class="line">                             &quot;exam&quot;: &quot;LEM Landing&quot;,</span><br><span class="line">                             &quot;grade&quot;: 97])</span><br><span class="line">let who: String? = gradebook[&quot;name&quot;]</span><br><span class="line">let grade: Int?  = gradebook[&quot;grade&quot;]</span><br><span class="line">// 不需要使用&quot;as?&quot;转换类型</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/01/25/swift之泛型学习（二）/#more">更多 >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/技术开发//" class="article-tag-list-link color5">技术开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/25/swift之泛型学习（二）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1253,6 +1256,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">App Store</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">OC</a>
               </li>
             
             <div class="clearfix"></div>
