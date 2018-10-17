@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://fanxiaolu.top">
-  <title>Archives: 2017/12 | fan小陆</title>
+  <title>vapor3初体验：变化怎么就这么大呢 | fan小陆</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="欢迎光临~いらっしゃいませ~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fan小陆">
-<meta property="og:url" content="http://fanxiaolu.top/archives/2017/12/index.html">
+  <meta name="description" content="之前的文章 使用Swift4+Vapor写后端-初体验 使用Swift4+Vapor写后端-部署heroku服务器 使用Swift4+Vapor写后端-Droplet和Route 使用Swift4+Vapor写后端-示例&amp;amp;套路 使用Swift4+Vapor写后端-总结  以上使用vapor2 前言由于 Apple 发布了事件驱动的非阻塞网络框架 SwiftNIO 的缘故，Vapor 3">
+<meta name="keywords" content="Swift,Vapor">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vapor3初体验：变化怎么就这么大呢">
+<meta property="og:url" content="http://fanxiaolu.top/2018/10/17/vapor3初体验：变化怎么就这么大呢/index.html">
 <meta property="og:site_name" content="fan小陆">
-<meta property="og:description" content="欢迎光临~いらっしゃいませ~">
+<meta property="og:description" content="之前的文章 使用Swift4+Vapor写后端-初体验 使用Swift4+Vapor写后端-部署heroku服务器 使用Swift4+Vapor写后端-Droplet和Route 使用Swift4+Vapor写后端-示例&amp;amp;套路 使用Swift4+Vapor写后端-总结  以上使用vapor2 前言由于 Apple 发布了事件驱动的非阻塞网络框架 SwiftNIO 的缘故，Vapor 3">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-4c6749320eec7d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-10-17T08:37:57.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fan小陆">
-<meta name="twitter:description" content="欢迎光临~いらっしゃいませ~">
+<meta name="twitter:title" content="vapor3初体验：变化怎么就这么大呢">
+<meta name="twitter:description" content="之前的文章 使用Swift4+Vapor写后端-初体验 使用Swift4+Vapor写后端-部署heroku服务器 使用Swift4+Vapor写后端-Droplet和Route 使用Swift4+Vapor写后端-示例&amp;amp;套路 使用Swift4+Vapor写后端-总结  以上使用vapor2 前言由于 Apple 发布了事件驱动的非阻塞网络框架 SwiftNIO 的缘故，Vapor 3">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1275318-4c6749320eec7d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="fan小陆" type="application/atom+xml">
   
@@ -179,136 +183,212 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vapor3初体验：变化怎么就这么大呢" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/31/2017年度总结/" class="archive-article-date">
-  	<time datetime="2017-12-31T05:24:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/31/2017年度总结/">2017年度总结</a>
+    <h1 class="article-title" itemprop="name">
+      vapor3初体验：变化怎么就这么大呢
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/10/17/vapor3初体验：变化怎么就这么大呢/" class="archive-article-date">
+  	<time datetime="2018-10-17T08:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/1275318-4c6749320eec7d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="之前的文章"><a href="#之前的文章" class="headerlink" title="之前的文章"></a>之前的文章</h3><ol>
+<li><a href="https://www.jianshu.com/p/54187a243832" target="_blank" rel="noopener">使用Swift4+Vapor写后端-初体验</a></li>
+<li><a href="https://www.jianshu.com/p/3f6a723a4a78" target="_blank" rel="noopener">使用Swift4+Vapor写后端-部署heroku服务器</a></li>
+<li><a href="https://www.jianshu.com/p/3e958baa58f8" target="_blank" rel="noopener">使用Swift4+Vapor写后端-Droplet和Route</a></li>
+<li><a href="https://www.jianshu.com/p/fdf43cc161a9" target="_blank" rel="noopener">使用Swift4+Vapor写后端-示例&amp;套路</a></li>
+<li><a href="https://www.jianshu.com/p/8d6906037fd7" target="_blank" rel="noopener">使用Swift4+Vapor写后端-总结</a></li>
+</ol>
+<p>以上使用vapor2</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>由于 Apple 发布了事件驱动的非阻塞网络框架 <a href="https://github.com/apple/swift-nio" target="_blank" rel="noopener">SwiftNIO</a> 的缘故，Vapor 3 以迅雷不及掩耳盗铃当之势将其接入，导致 Vapor 2 和 Vapor 3 的语法差异很大。 <a id="more"></a></p>
+<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>我们使用<code>vapor new helloVapor</code>创建一个名为helloVapor的空项目，vapor默认创建的模板项目中已经为我们写了一些初始化代码。项目结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── Public</span><br><span class="line">├── Sources</span><br><span class="line">│   ├── App</span><br><span class="line">│   │   ├── Controllers</span><br><span class="line">│   │   ├── Models</span><br><span class="line">│   │   ├── boot.swift</span><br><span class="line">│   │   ├── configure.swift</span><br><span class="line">│   │   └── routes.swift</span><br><span class="line">│   └── Run</span><br><span class="line">│       └── main.swift</span><br><span class="line">├── Tests</span><br><span class="line">│   └── AppTests</span><br><span class="line">└── Package.swift</span><br></pre></td></tr></table></figure>
+<h4 id="App"><a href="#App" class="headerlink" title="App"></a>App</h4><p>这是应用程序中最重要的文件夹，它是所有应用程序逻辑的所在。</p>
+<h5 id="Controllers"><a href="#Controllers" class="headerlink" title="Controllers"></a>Controllers</h5><p>控制器是将应用逻辑分组在一起的好方式。大多数控制器具有许多功能，接受请求并返回某种响应。</p>
+<h5 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h5><p>模型文件夹用来存放模型文件。</p>
+<h5 id="boot-swift"><a href="#boot-swift" class="headerlink" title="boot.swift"></a>boot.swift</h5><p>此文件包含一个函数，该函数将在应用程序启动后调用。我们可以在访问这里的应用程序，也可以使用该应用程序来创建可能需要的任何服务。</p>
+<h5 id="configure-swift"><a href="#configure-swift" class="headerlink" title="configure.swift"></a>configure.swift</h5><p>此文件包含一个函数，该函数接收应用程序的配置、环境和服务作为输入参数。在这里来改变应用的配置或注册服务。</p>
+<h5 id="routes-swift"><a href="#routes-swift" class="headerlink" title="routes.swift"></a>routes.swift</h5><p>在这里创建路由。</p>
+<h3 id="项目初体验"><a href="#项目初体验" class="headerlink" title="项目初体验"></a>项目初体验</h3><p>与vapor2中的<code>Droplet</code>不同，vapor3使用<code>Application</code>作为一个服务容器，它负责注册路由，启动服务器，中间件 (middleware)等等。如示例代码<code>app.swift</code>中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public func app(_ env: Environment) throws -&gt; Application &#123;</span><br><span class="line">    var config = Config.default()</span><br><span class="line">    var env = env</span><br><span class="line">    var services = Services.default()</span><br><span class="line">    try configure(&amp;config, &amp;env, &amp;services)</span><br><span class="line">    let app = try Application(config: config, environment: env, services: services)</span><br><span class="line">    try boot(app)</span><br><span class="line">    return app</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>main.swift</code>中调用了该方法初始化了一个Application，然后调用其<code>run</code>方法启动服务。<br>其中<code>try configure(&amp;config, &amp;env, &amp;services)</code>这里调用了<code>configure.swift</code>文件中的<code>public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws</code>方法，用来注册服务、路由、中间层，并配置数据库和模型。具体内容见项目的示例代码，这里不再赘述。</p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>使用<code>vapor run</code>或者<code>vapor xcode</code>创建xcode项目并选择<code>run</code>target来运行项目。<br>控制台打印 <code>Server starting on http://localhost:8080</code> 项目运行成功，然后我们调用一下默认的接口，在浏览器中输入<code>http://localhost:8080/hello</code>，会看到返回的字符串：Hello, world!<br>接下来可以尝试自己写一些简单的get/post请求。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://docs.vapor.codes/3.0/" target="_blank" rel="noopener">vpaor文档</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随想</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Vapor</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/周记系列//" class="article-tag-list-link color5">周记系列</a>
+        			<a href="/categories/技术开发//" class="article-tag-list-link color5">技术开发</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://fanxiaolu.top/2018/10/17/vapor3初体验：变化怎么就这么大呢/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/24/十月新番总结/" class="archive-article-date">
-  	<time datetime="2017-12-24T05:27:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/29/iOS 高德地图集成/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS 高德地图SDK集成初试</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/24/十月新番总结/">十月新番总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">总结</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">十月番</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">动漫</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/动漫番剧//" class="article-tag-list-link color5">动漫番剧</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#之前的文章"><span class="toc-number">1.</span> <span class="toc-text">之前的文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建项目"><span class="toc-number">3.</span> <span class="toc-text">创建项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#App"><span class="toc-number">3.1.</span> <span class="toc-text">App</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Controllers"><span class="toc-number">3.1.1.</span> <span class="toc-text">Controllers</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Models"><span class="toc-number">3.1.2.</span> <span class="toc-text">Models</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#boot-swift"><span class="toc-number">3.1.3.</span> <span class="toc-text">boot.swift</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#configure-swift"><span class="toc-number">3.1.4.</span> <span class="toc-text">configure.swift</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#routes-swift"><span class="toc-number">3.1.5.</span> <span class="toc-text">routes.swift</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目初体验"><span class="toc-number">4.</span> <span class="toc-text">项目初体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行"><span class="toc-number">5.</span> <span class="toc-text">运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'fanxiaolu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
+
+  
 
 
           </div>
@@ -331,8 +411,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
