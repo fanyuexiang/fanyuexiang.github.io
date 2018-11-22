@@ -6,20 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://fanxiaolu.top">
-  <title>RN组件的导出关键字export和export default | fan小陆</title>
+  <title>程序员也要谈恋爱 之 live2d 女友 | fan小陆</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="定义组件后为了供其他页面使用,我们需要将组件导出。组件导出的关键字是1exprot default 没有加default时，例如：1export class TestComponent&amp;#123;&amp;#125; 我们可以在单个js文件里声明多个组件，例如TestComponents.js12export class TestComponent&amp;#123;&amp;#125;export class Anot">
-<meta name="keywords" content="RN">
+  <meta name="description" content="前言萌娘百科的程序员招募信息中，有这么一条需求：使用live 2D等软件做个能转头卖萌的萌百娘app。这一条引起了我的注意，于是想要了解一下这个live 2D，本篇博客主要记录live 2D的集成以及相关使用。">
+<meta name="keywords" content="iOS,OC,live2d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RN组件的导出关键字export和export default">
-<meta property="og:url" content="http://fanxiaolu.top/2017/07/13/RN组件的导出关键字export和export default/index.html">
+<meta property="og:title" content="程序员也要谈恋爱 之 live2d 女友">
+<meta property="og:url" content="http://fanxiaolu.top/2018/11/22/程序员也要谈恋爱 之 live2d 女友/index.html">
 <meta property="og:site_name" content="fan小陆">
-<meta property="og:description" content="定义组件后为了供其他页面使用,我们需要将组件导出。组件导出的关键字是1exprot default 没有加default时，例如：1export class TestComponent&amp;#123;&amp;#125; 我们可以在单个js文件里声明多个组件，例如TestComponents.js12export class TestComponent&amp;#123;&amp;#125;export class Anot">
+<meta property="og:description" content="前言萌娘百科的程序员招募信息中，有这么一条需求：使用live 2D等软件做个能转头卖萌的萌百娘app。这一条引起了我的注意，于是想要了解一下这个live 2D，本篇博客主要记录live 2D的集成以及相关使用。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-07-31T03:30:18.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-64bb30e086262fda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-70329f98d033a38e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-979b5c3a3966ff41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-2b733e806e66c656.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-caa3f6c6120d54d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-d2dbb079a8ec607c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-43af8d21bfecf5aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-1590eea2ac440c03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-11-22T09:28:36.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RN组件的导出关键字export和export default">
-<meta name="twitter:description" content="定义组件后为了供其他页面使用,我们需要将组件导出。组件导出的关键字是1exprot default 没有加default时，例如：1export class TestComponent&amp;#123;&amp;#125; 我们可以在单个js文件里声明多个组件，例如TestComponents.js12export class TestComponent&amp;#123;&amp;#125;export class Anot">
+<meta name="twitter:title" content="程序员也要谈恋爱 之 live2d 女友">
+<meta name="twitter:description" content="前言萌娘百科的程序员招募信息中，有这么一条需求：使用live 2D等软件做个能转头卖萌的萌百娘app。这一条引起了我的注意，于是想要了解一下这个live 2D，本篇博客主要记录live 2D的集成以及相关使用。">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1275318-64bb30e086262fda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="fan小陆" type="application/atom+xml">
   
@@ -181,36 +190,60 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-RN组件的导出关键字export和export default" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-程序员也要谈恋爱 之 live2d 女友" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      RN组件的导出关键字export和export default
+      程序员也要谈恋爱 之 live2d 女友
     </h1>
   
 
         
-        <a href="/2017/07/13/RN组件的导出关键字export和export default/" class="archive-article-date">
-  	<time datetime="2017-07-13T03:02:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-13</time>
+        <a href="/2018/11/22/程序员也要谈恋爱 之 live2d 女友/" class="archive-article-date">
+  	<time datetime="2018-11-22T09:58:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>定义组件后为了供其他页面使用,我们需要将组件导出。<br>组件导出的关键字是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exprot default</span><br></pre></td></tr></table></figure></p>
-<p>没有加default时，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export class TestComponent&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我们可以在单个js文件里声明多个组件，例如TestComponents.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export class TestComponent&#123;&#125;</span><br><span class="line">export class AnotherTestComponent&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这样在其他文件引用时，需要使用{}符号且组件名称必修和class名称一样，像这样子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123;TestComponent,AnotherTestComponent&#125; from &apos;./components/TestComponents&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>而加default时，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export default class TestComponent&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后在其他文件引用，像这样子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import TestComponent from &apos;./components/TestComponents&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>你也可以为这个组件另起一个别名，像这样子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import MyTestComponent from &apos;./components/TestComponents&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>但是每个文件里只能有<strong>一个</strong>default组件，可以包含其他非default组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export default class TestComponent&#123;&#125;</span><br><span class="line">export class AnotherTestComponent&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>然后引用的时候，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import TestComponent,&#123;AnotherTestComponent&#125; from &apos;./components/TestComponents&apos;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>有default和没有default的区别在于：有default在引用时可以自定义名称，而没有default时需要使用{}括起来且名称必修和class名称一致<br>每个文件里只能有一个default组件，但可以有多个非default组件</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><a href="https://zh.moegirl.org/%E7%A8%8B%E5%BA%8F%E5%91%98%E6%8B%9B%E5%8B%9F%E4%B8%AD" target="_blank" rel="noopener">萌娘百科</a>的程序员招募信息中，有这么一条需求：<strong>使用live 2D等软件做个能转头卖萌的萌百娘app</strong>。这一条引起了我的注意，于是想要了解一下这个live 2D，本篇博客主要记录live 2D的集成以及相关使用。<a id="more"></a><br>项目demo见文末。</p>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><blockquote>
+<p>OC<br>Xcode 10.1</p>
+</blockquote>
+<h3 id="SDK集成"><a href="#SDK集成" class="headerlink" title="SDK集成"></a>SDK集成</h3><h4 id="引入Live2D-Cubism-SDK"><a href="#引入Live2D-Cubism-SDK" class="headerlink" title="引入Live2D Cubism SDK"></a>引入Live2D Cubism SDK</h4><p>在live2d官网下载SDK，这里我们使用的是旧版2.0系列的SDK，而不是新版2.1系列的SDK。<br>SDK版本: 2.0.06_1 <a href="http://sites.cybernoids.jp/cubism-sdk2/ios/ios_dl" target="_blank" rel="noopener">下载地址</a></p>
+<p>解压后，SDK结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Live2D_SDK_[平台名]_[版本]</span><br><span class="line">    |--- lib</span><br><span class="line">    |--- include</span><br><span class="line">    |--- framework</span><br><span class="line">    |--- sample    </span><br><span class="line">    |--- ReadMe.txt</span><br></pre></td></tr></table></figure>
+<p>我们需要的在项目中引入的是<code>lib</code>、<code>include</code>和<code>framework</code>中的内容，<code>sample</code>中是一些示例项目。</p>
+<h4 id="配置Xcode"><a href="#配置Xcode" class="headerlink" title="配置Xcode"></a>配置Xcode</h4><p>我们创建一个名为<code>MyGirl</code>的工程项目，根据官方的<a href="http://www.live2d.com/usermanual/cubism2_cn/sdk_tutorial/platform-setting/ios/createproject.html" target="_blank" rel="noopener">SDK集成说明</a>，我们开始一步步的配置Xcode，进入工程项目的<code>Build Setting</code>选项。</p>
+<ol>
+<li><code>Other Linker Flags</code>中添加<code>-lLive2D</code>。<br><img src="https://upload-images.jianshu.io/upload_images/1275318-64bb30e086262fda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置1.png"></li>
+<li><p><code>Library Search Paths</code>, Debug的部分设置<code>&quot;$(SRCROOT)/（你的项目名）/Live2DSDK/lib/$(CONFIGURATION)-$(PLATFORM_NAME)&quot;</code>, Release的部分设置<code>&quot;$(SRCROOT)/（你的项目名）/Live2DSDK/lib/$(CONFIGURATION)-$(PLATFORM_NAME)&quot;</code><br><img src="https://upload-images.jianshu.io/upload_images/1275318-70329f98d033a38e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置2.png"></p>
+</li>
+<li><p><code>User Header Search Paths</code>, 设置<code>&quot;$(SRCROOT)/（你的项目名）/Live2DSDK/include&quot;</code>。<br><img src="https://upload-images.jianshu.io/upload_images/1275318-979b5c3a3966ff41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置3.png"></p>
+</li>
+<li><p><code>Preprocessor Macros</code>中，在Debug与Releease中,添加<code>L2D_TARGET_IPHONE</code>。<br><img src="https://upload-images.jianshu.io/upload_images/1275318-2b733e806e66c656.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置4.png"></p>
+</li>
+<li><p>在<code>Framework</code>中加入<code>GLKit</code>、<code>OpenGLES</code>、<code>CoreMotion</code>和<code>AVFoundation</code>。</p>
+</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/1275318-caa3f6c6120d54d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置5.png"></p>
+<h4 id="下载live2d模型"><a href="#下载live2d模型" class="headerlink" title="下载live2d模型"></a>下载live2d模型</h4><p>我们使用官方提供的<a href="https://docs.live2d.com/cubism-editor-manual/sample-model/" target="_blank" rel="noopener">示例模型</a>或者<a href="http://sites.cybernoids.jp/cubism_e/samples" target="_blank" rel="noopener">这里</a>，我们下载这个双马尾妹纸Haru酱。模型资源文件放在项目<code>Live2DResource</code>目录中。</p>
+<h4 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h4><p>在项目中添加SDK文件时，我们勾选<code>Create groups</code>选项，而引入模型文件时我们勾选<code>Create folder references</code>选项。所以最后我们的项目结构如下：SDK文件夹是黄色的，资源文件时蓝色的。这里<code>OfficalLive2DTools</code>目录下的文件是SDK示例项目中拷贝过来的，会用到。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1275318-d2dbb079a8ec607c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结构1.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1275318-43af8d21bfecf5aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结构2.png"></p>
+<h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><p>因为Live2D是<code>c++</code>的代码语言, 所以我们把<code>ViewController.m</code>改为<code>ViewController.mm</code>，然后在里面编写代码。不熟悉的话，代码就按照示例项目中的写就可以。</p>
+<h3 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h3><p>运行后，haru酱妹子就出现在屏幕上啦~</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1275318-1590eea2ac440c03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果图.png"></p>
+<p><a href="https://github.com/fanyuexiang/live2d_demo" target="_blank" rel="noopener">demo地址</a></p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>最后我发现，其实live2D的难点完全在于人物模型的制作！！！（捂脸）女友的可爱程度完全取决于模型的制作啊~~~这个SDK集成并没有什么技术含量T_T，没有可爱的女友模型，我要着铁棒有何用！溜了溜了，学习做模型去了。</p>
+<p>现在二次元ACG文化在青少年人群中逐渐盛行，为社会大众所接受。二次元IP、虚拟偶像等的正在创造很大的经济效益，虚拟歌手初音未来、洛天依等的演唱会门票早已经追平国内一线明星，各类二次元平台、产品周边层出不穷，身为二次元技术宅，程序员掌握一些相关技能感觉很有必要啊。（给我先去找个女朋友啊喂！！！）</p>
+<h3 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h3><blockquote>
+<p><a href="http://www.live2d.com/" target="_blank" rel="noopener">live2d官网</a><br><a href="http://www.live2d.com/usermanual/cubism2_cn/sdk_tutorial/platform-setting/ios/createproject.html" target="_blank" rel="noopener">官方集成教学</a><br><a href="https://github.com/DaidoujiChen/DaiLive2DPlayground" target="_blank" rel="noopener">DaiLive2DPlayground</a></p>
+</blockquote>
 
       
 
@@ -224,7 +257,15 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RN</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">live2d</a>
         		</li>
       		
 		</ul>
@@ -291,7 +332,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://fanxiaolu.top/2017/07/13/RN组件的导出关键字export和export default/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://fanxiaolu.top/2018/11/22/程序员也要谈恋爱 之 live2d 女友/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -305,18 +346,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/08/17/八月周记（二）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          八月周记（二）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/04/19/iOS 10.3下解决Charles抓包ssl证书信任问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS 10.3下解决Charles抓包ssl证书信任问题</div>
+    <a href="/2018/10/17/vapor3初体验：变化怎么就这么大呢/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vapor3初体验：变化怎么就这么大呢</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -343,7 +375,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">1.</span> <span class="toc-text">总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境配置"><span class="toc-number">2.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDK集成"><span class="toc-number">3.</span> <span class="toc-text">SDK集成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#引入Live2D-Cubism-SDK"><span class="toc-number">3.1.</span> <span class="toc-text">引入Live2D Cubism SDK</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置Xcode"><span class="toc-number">3.2.</span> <span class="toc-text">配置Xcode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载live2d模型"><span class="toc-number">3.3.</span> <span class="toc-text">下载live2d模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目结构"><span class="toc-number">3.4.</span> <span class="toc-text">项目结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行项目"><span class="toc-number">4.</span> <span class="toc-text">运行项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行效果"><span class="toc-number">5.</span> <span class="toc-text">运行效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#后记"><span class="toc-number">6.</span> <span class="toc-text">后记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关参考"><span class="toc-number">7.</span> <span class="toc-text">相关参考</span></a></li></ol>
                     </div>
                 </span>
             </div>
