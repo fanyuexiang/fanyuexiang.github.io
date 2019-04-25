@@ -6,22 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://fanxiaolu.top">
-  <title>使用Swift4+Vapor写后端-示例&amp;套路 | fan小陆</title>
+  <title>fan小陆</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言上一篇我们初步了解了Droplet和Route，本篇中我们一起写一些简单的get和post请求，以及我总结的一些套路。因为本人也是初学，没有任何后端开发经验，所有难免出现错误，大虾们多多指正。">
-<meta name="keywords" content="Swift,Vapor">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用Swift4+Vapor写后端-示例&amp;套路">
-<meta property="og:url" content="http://fanxiaolu.top/2018/04/11/使用Swift4+Vapor写后端-示例&套路/index.html">
+  <meta name="description" content="欢迎光临~いらっしゃいませ~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="fan小陆">
+<meta property="og:url" content="http://fanxiaolu.top/page/4/index.html">
 <meta property="og:site_name" content="fan小陆">
-<meta property="og:description" content="前言上一篇我们初步了解了Droplet和Route，本篇中我们一起写一些简单的get和post请求，以及我总结的一些套路。因为本人也是初学，没有任何后端开发经验，所有难免出现错误，大虾们多多指正。">
+<meta property="og:description" content="欢迎光临~いらっしゃいませ~">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1275318-4c6749320eec7d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-09-28T07:48:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Swift4+Vapor写后端-示例&amp;套路">
-<meta name="twitter:description" content="前言上一篇我们初步了解了Droplet和Route，本篇中我们一起写一些简单的get和post请求，以及我总结的一些套路。因为本人也是初学，没有任何后端开发经验，所有难免出现错误，大虾们多多指正。">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1275318-4c6749320eec7d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="fan小陆">
+<meta name="twitter:description" content="欢迎光临~いらっしゃいませ~">
   
     <link rel="alternative" href="/atom.xml" title="fan小陆" type="application/atom+xml">
   
@@ -183,61 +179,77 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-使用Swift4+Vapor写后端-示例&amp;套路" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-MonkeyKing——我要这SDK有何用？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      使用Swift4+Vapor写后端-示例&amp;套路
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/31/MonkeyKing——我要这SDK有何用？/">MonkeyKing——我要这SDK有何用？</a>
     </h1>
   
 
         
-        <a href="/2018/04/11/使用Swift4+Vapor写后端-示例&套路/" class="archive-article-date">
-  	<time datetime="2018-04-11T04:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
+        <a href="/2016/12/31/MonkeyKing——我要这SDK有何用？/" class="archive-article-date">
+  	<time datetime="2016-12-31T03:57:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/1275318-4c6749320eec7d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>上一篇我们初步了解了Droplet和Route，本篇中我们一起写一些简单的get和post请求，以及我总结的一些套路。因为本人也是初学，没有任何后端开发经验，所有难免出现错误，大虾们多多指正。 <a id="more"></a></p>
-<h3 id="常见请求"><a href="#常见请求" class="headerlink" title="常见请求"></a>常见请求</h3><h4 id="get-post请求"><a href="#get-post请求" class="headerlink" title="get/post请求"></a>get/post请求</h4><p>返回字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">drop.get(&quot;get&quot;,&quot;string&quot;) &#123; req in</span><br><span class="line">	return &quot;Hello, world!&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>返回JSON</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">drop.get(&quot;get&quot;,&quot;json&quot;) &#123; req in</span><br><span class="line">	 var json = JSON()</span><br><span class="line">     try json.set(&quot;hello&quot;, &quot;world&quot;)</span><br><span class="line">     return json</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>获取request中数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">drop.get(&quot;get&quot;,&quot;info&quot;) &#123; req in</span><br><span class="line">     var json = JSON()</span><br><span class="line">     let name = req.data[&quot;name&quot;]?.string</span><br><span class="line">     let age = req.data[&quot;age&quot;]?.int</span><br><span class="line">     let isVip = req.data[&quot;isVip&quot;]?.bool</span><br><span class="line">     try json.set(&quot;name&quot;, name)</span><br><span class="line">     try json.set(&quot;age&quot;, age)</span><br><span class="line">     try json.set(&quot;isVip&quot;, isVip)</span><br><span class="line">     return json</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>post请求同上处理。</p>
-<h3 id="项目路由处理常见套路"><a href="#项目路由处理常见套路" class="headerlink" title="项目路由处理常见套路"></a>项目路由处理常见套路</h3><h4 id="单一文件"><a href="#单一文件" class="headerlink" title="单一文件"></a>单一文件</h4><p>demo或者测试项目中业务逻辑很少，不需要统一管理时，所有的路由直接写<code>main.swift</code>中就可以了。<br>如： <code>main.swift</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let config = try Config()</span><br><span class="line">try config.setup()</span><br><span class="line">let drop = try Droplet(config)</span><br><span class="line"></span><br><span class="line">// 注册路由</span><br><span class="line">// get 示例</span><br><span class="line">drop.get(&quot;welcome&quot;) &#123; request in</span><br><span class="line">    return &quot;Hello&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// post 示例</span><br><span class="line">drop.post(&quot;form&quot;) &#123; request in</span><br><span class="line">    return &quot;Submitted with a POST request&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 路由组 示例 1</span><br><span class="line">drop.group(&quot;v1&quot;) &#123; v1 in</span><br><span class="line"></span><br><span class="line">	// get </span><br><span class="line">    v1.get(&quot;users&quot;) &#123; request in</span><br><span class="line">        // get the users</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	// post </span><br><span class="line">	drop.post(&quot;form&quot;) &#123; request in</span><br><span class="line">    	return &quot;Submitted with a POST request&quot;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 路由组 示例 2</span><br><span class="line">let v1 = drop.grouped(&quot;v1&quot;)</span><br><span class="line"></span><br><span class="line">// get </span><br><span class="line">v1.get(&quot;users&quot;) &#123; request in</span><br><span class="line">	// get the users</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// post </span><br><span class="line">v1.post(&quot;form&quot;) &#123; request in</span><br><span class="line">	return &quot;Submitted with a POST request&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 运行</span><br><span class="line">try drop.run()</span><br></pre></td></tr></table></figure>
-<h4 id="vapor模板中的实现"><a href="#vapor模板中的实现" class="headerlink" title="vapor模板中的实现"></a>vapor模板中的实现</h4><p>当直接使用<code>vapor new Hello --template=api</code>创建一个名为“hello”的vapor默认的模板项目时，内部已经存在了部分样板代码。<br>具体就是通过给<code>Config</code>、<code>Droplet</code>添加extension，在extension中实现路由注册。具体代码参考<code>Sources/App/Setup/</code>目录下<code>Config+Setup.swift</code>和<code>Droplet+Setup.swift</code>文件。</p>
-<p>在<code>Droplet+Setup.swift</code>实现一个<code>setup</code>方法去注册路由</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">extension Droplet &#123;</span><br><span class="line">    public func setup() throws &#123;</span><br><span class="line">        try setupRoutes()</span><br><span class="line">        // Do any additional droplet setup</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	func setupRoutes() throws &#123;</span><br><span class="line">        get(&quot;hello&quot;) &#123; req in</span><br><span class="line">            var json = JSON()</span><br><span class="line">            try json.set(&quot;hello&quot;, &quot;world&quot;)</span><br><span class="line">            return json</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">		post(&quot;posttest&quot;) &#123; req in</span><br><span class="line">	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="工具类统一注册路由"><a href="#工具类统一注册路由" class="headerlink" title="工具类统一注册路由"></a>工具类统一注册路由</h4><p>通过一个工具类如：RouteTool、Router 等等（命名随意），来统一注册路由，以MVC的方式搭建项目。</p>
-<p>首先在<code>main.swift</code>中，我们定义全局变量<code>api</code>、<code>v1</code>、<code>v2</code>等（根据实际需求）管理路由组。如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let config = try Config()</span><br><span class="line">try config.setup()</span><br><span class="line">let drop = try Droplet(config)</span><br><span class="line"></span><br><span class="line">/// 基础api</span><br><span class="line">let api   = drop.grouped(&quot;api&quot;)</span><br><span class="line">let v1    = api.grouped(&quot;v1&quot;)</span><br><span class="line">let v2    = api.grouped(&quot;v2&quot;)</span><br><span class="line"></span><br><span class="line">/// 路由</span><br><span class="line">RouteTool.setUp()</span><br><span class="line">try drop.run()</span><br></pre></td></tr></table></figure>
-<p>然后如上述代码中<code>RouteTool.setUp()</code>，我们创建一个路由工具<code>RouteTool</code>，并为其实现一个<code>setUp</code>方法来为不同的控制器统一注册路由。示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">struct RouteTool &#123;</span><br><span class="line">    static func setUp() &#123;</span><br><span class="line">        // 注册业务</span><br><span class="line">        SignController().registeredRouting()</span><br><span class="line">        // 用户业务</span><br><span class="line">        UserController().registeredRouting()</span><br><span class="line">        // 验证码</span><br><span class="line">        VerifyCodeController().registeredRouting()</span><br><span class="line">        // 评论业务</span><br><span class="line">        CommentController().registeredRouting()</span><br><span class="line">        ···等等</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后我们在具体的控制器里，完成路由注册、数据请求的具体实现。比如我们创建SignUpController，用来处理用户注册的业务。<br>在<code>SignUpController.swift</code>中，我们实现处理请求。方法内部的业务代码此处使用<code>...</code>省略，并非本篇重点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class SignController &#123;</span><br><span class="line"></span><br><span class="line">	// 对外提供统一注册路由的方法</span><br><span class="line">	public func registeredRouting() &#123;</span><br><span class="line">		v1.post(&quot;signup&quot;, handler: self.signup)</span><br><span class="line">        v1.post(&quot;password&quot;,&quot;reset&quot;, handler: self.resetPassWord)</span><br><span class="line">        v1.post(&quot;password&quot;,&quot;change&quot;, handler: self.changePassWord)</span><br><span class="line">	&#125; </span><br><span class="line"></span><br><span class="line">	// 用户注册</span><br><span class="line"> 	func signup(_ request: Request) throws -&gt; ResponseRepresentable &#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// 重置密码</span><br><span class="line">	func resetPassWord(_ request: Request) throws -&gt; ResponseRepresentable &#123; </span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	// 更改密码</span><br><span class="line">	func changePassWord(_ request: Request) throws -&gt; ResponseRepresentable &#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	...等等其他业务</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="通过RouteCollection协议来注册路由组"><a href="#通过RouteCollection协议来注册路由组" class="headerlink" title="通过RouteCollection协议来注册路由组"></a>通过RouteCollection协议来注册路由组</h4><p>同样的，我们使用上一节中的<code>SignController</code>作代码示例。遵守<code>RouteCollection</code>协议并实现<code>func build(_ builder: RouteBuilder)</code>协议方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class SignController: RouteCollection &#123;</span><br><span class="line"></span><br><span class="line">    func build(_ builder: RouteBuilder) throws &#123;</span><br><span class="line">        let api = builder.grouped(&quot;api&quot;)</span><br><span class="line">        let v1 = api.grouped(&quot;v1&quot;)</span><br><span class="line">        v1.post(&quot;signup&quot;, handler: self.signUp)</span><br><span class="line">		v1.post(&quot;password&quot;,&quot;reset&quot;, handler: self.resetPassWord)</span><br><span class="line">        v1.post(&quot;password&quot;,&quot;change&quot;, handler: self.changePassWord)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">	// 用户注册</span><br><span class="line"> 	func signup(_ request: Request) throws -&gt; ResponseRepresentable &#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	// 重置密码</span><br><span class="line">	func resetPassWord(_ request: Request) throws -&gt; ResponseRepresentable &#123; </span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	// 更改密码</span><br><span class="line">	func changePassWord(_ request: Request) throws -&gt; ResponseRepresentable &#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">	...等等其他业务</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这时候我们就可以在<code>main.swift</code>中通过<code>collection(&lt;#T##c: (EmptyInitializable &amp; RouteCollection).Protocol##(EmptyInitializable &amp; RouteCollection).Protocol#&gt;)</code>来注册路由组了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let config = try Config()</span><br><span class="line">try config.setup()</span><br><span class="line">let drop = try Droplet(config)</span><br><span class="line"></span><br><span class="line">// 注册路由组</span><br><span class="line">let signVC = SignController()</span><br><span class="line">drop.collection(signVC)</span><br><span class="line"></span><br><span class="line">try drop.run()</span><br></pre></td></tr></table></figure>
-<p>我们也可以为控制器实现一个extension并遵守<code>EmptyInitializable</code>协议，这样做的目的是注册路由时我们无需实例化该控制器。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">extension SignController: EmptyInitializable &#123; &#125;</span><br></pre></td></tr></table></figure>
-<p>此时我们在以上注册路由组的示例代码中就不需要实例化SignController了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop.collection(SignController.self)</span><br></pre></td></tr></table></figure>
-<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>本篇是我在阅读文档和其他开源项目时总结的一些小套路，毕竟我也没有后端开发经验，文中若出现错误，欢迎批评指正。</p>
-<h3 id="相关参考"><a href="#相关参考" class="headerlink" title="相关参考"></a>相关参考</h3><blockquote>
-<p><a href="https://docs.vapor.codes/2.0/vapor/" target="_blank" rel="noopener">vapor文档</a></p>
-</blockquote>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><hr>
+<p>集成第三方的东西虽然很简单,但是如果出现了一些编译上的错误,作为菜鸟是很难处理的。而最简单有效的处理方式就是把第三方的SDK全部移除再重新添加，错误就神奇的消失啦~<br><img src="http://upload-images.jianshu.io/upload_images/1275318-37a94b7ec032ff48.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我读书少，表骗我"><br>之前公司技术总监因故放弃了使用<em>友M</em>去管理第三方SDK，采取直接去第三方平台下载SDK集成的方式，导致项目里的SDK管理混乱。那么可不可以不使用第三方的SDK来实现第三方平台的<strong>分享、授权、支付</strong>等操作嘞?那就请猴王<a href="https://github.com/nixzhu/MonkeyKing" target="_blank" rel="noopener">MonkeyKing</a>来收服这些SDK吧~<br>其实官方demo里面的例子讲的很清楚了，但是自己动手按照自己喜欢的方式封装一下内部方法，用起来也舒服些~</p>
+<h3 id="正片"><a href="#正片" class="headerlink" title="正片"></a>正片</h3><hr>
 <blockquote>
-<p><a href="https://github.com/cailingyun2010/SRSQ-Vapor" target="_blank" rel="noopener">开源项目SRSQ</a></p>
+<p>操作环境：<br>xcode 8.2.1<br>swift 3.0</p>
+</blockquote>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><p>新建一个xcode项目，使用CocoaPods导入MonkeyKing。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Uncomment the next line to define a global platform for your project</span><br><span class="line">platform :ios, &apos;9.0&apos;</span><br><span class="line">target &apos;MonkeyKingDemo&apos; do</span><br><span class="line">  # Comment the next line if you&apos;re not using Swift and don&apos;t want to use dynamic frameworks</span><br><span class="line">  use_frameworks!</span><br><span class="line">  pod &apos;MonkeyKing&apos;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>先从第三方分享开始吧~<br>打开项目，先根据<strong>自己的需求</strong>配置一下第三方平台的URL Type（微信，qq，微博等等）。<br><img src="http://upload-images.jianshu.io/upload_images/1275318-59718c44ab448ae5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="按需配置URL Type"><br><img src="http://upload-images.jianshu.io/upload_images/1275318-6faa3992d5146314.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="按需配置LSApplicationQueriesSchemes"></p>
+<p>1.我们创建一个工具类<strong><em>thirdParty.swift</em></strong>来统一管理第三方的业务逻辑。<br>先按照自己的需求，定义一些枚举方便使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 分享类型</span><br><span class="line">enum shareType &#123;</span><br><span class="line">    case weChatSession</span><br><span class="line">    case weChatTimeline</span><br><span class="line">    case weibo</span><br><span class="line">    case qqFriend</span><br><span class="line">    case qqZone</span><br><span class="line">    case other // 占位用</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 第三方平台类型</span><br><span class="line">enum platformType &#123;</span><br><span class="line">    case weChat</span><br><span class="line">    case qq</span><br><span class="line">    case weibo</span><br><span class="line">    case alipay</span><br><span class="line">    case other //占位用</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.我们给工具类定义一个注册第三方账号的类方法，这个方法我们可以在app启动时就调用，或者在你需要使用第三方之前调用。第三方的App key 和App ID、回调地址，我们可以在该工具类里面定义一些常量来管理，这里不再赘述。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/// regist third account</span><br><span class="line">    class func registAccount() &#123;</span><br><span class="line">        MonkeyKing.registerAccount(.weChat(appID: &quot;xxxxxxx&quot;, appKey: &quot;xxxxxxx&quot;))</span><br><span class="line">        MonkeyKing.registerAccount(.weibo(appID: &quot;xxxxxxx&quot;, appKey: &quot;xxxxxxx&quot;, redirectURL: &quot;xxxxxxx&quot;))</span><br><span class="line">        MonkeyKing.registerAccount(.qq(appID: &quot;xxxxxxx&quot;))</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>通常我们就在app刚启动时调用这个方法吧~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool &#123;</span><br><span class="line">        // regist third account</span><br><span class="line">        thirdParty.registAccount()</span><br><span class="line">        return true</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.如果我们还需要处理第三方的回调，那么我们还需要在<strong>AppDelegate</strong>里面添加以下处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// iOS 10</span><br><span class="line">func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -&gt; Bool &#123;</span><br><span class="line">        _ = MonkeyKing.handleOpenURL(url)</span><br><span class="line">        return true</span><br><span class="line"> &#125;</span><br><span class="line">// iOS 9</span><br><span class="line">func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -&gt; Bool &#123;</span><br><span class="line">        _ = MonkeyKing.handleOpenURL(url)</span><br><span class="line">        return true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1275318-159b321397d238c1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="是不是已经等不及了"></p>
+<h4 id="第三方分享"><a href="#第三方分享" class="headerlink" title="第三方分享"></a>第三方分享</h4><hr>
+<p>同常我们需要分享的内容包括文字、图片、链接、视频、音频。在这里我只是把常用的文字、图片、链接分享处理一下，音视频一般不太用的到，如果需要的话，大同小异。</p>
+<p>首先我们在<strong><em>thirdParty</em></strong>里面增加一个内部使用的方法，实际上就是封装了MonkeyKing的内部方法，方便我们使用。分享文字、图片和链接时所封装的方法内部都会用到这个方法，不需要暴露给外界，所以方法加了<strong>fileprivate</strong>关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">fileprivate class func shareInfo(_ info: MonkeyKing.Info, shareType: shareType) &#123;</span><br><span class="line">        var message: MonkeyKing.Message?</span><br><span class="line">        switch shareType &#123;</span><br><span class="line">        case .weChatSession:</span><br><span class="line">            message = MonkeyKing.Message.weChat(.session(info: info))</span><br><span class="line">        case .weChatTimeline:</span><br><span class="line">            message = MonkeyKing.Message.weChat(.timeline(info: info))</span><br><span class="line">        case .weibo:</span><br><span class="line">            message = MonkeyKing.Message.weibo(.default(info: info, accessToken: nil))</span><br><span class="line">        case .qqFriend:</span><br><span class="line">            message = MonkeyKing.Message.qq(.friends(info: info))</span><br><span class="line">        case .qqZone:</span><br><span class="line">            message = MonkeyKing.Message.qq(.zone(info: info))</span><br><span class="line">        default:</span><br><span class="line">            break</span><br><span class="line">        &#125;</span><br><span class="line">        // 处理分享结果</span><br><span class="line">        if let message = message&#123;</span><br><span class="line">            MonkeyKing.deliver(message) &#123; result in</span><br><span class="line">                print(&quot;result: \(result)&quot;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="分享文字"><a href="#分享文字" class="headerlink" title="分享文字"></a>分享文字</h6><p>分享文字的话，其实方法参数里只留下<strong>text</strong>就可以，博主因为强迫症，各个方法都想要长得一样。。。所以用不到的参数也加上了。。。额。。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class func share(text: String?, title: String?, description: String?, shareType: shareType) &#123;</span><br><span class="line">        guard let text = text else &#123; return &#125;</span><br><span class="line">        let info = MonkeyKing.Info(</span><br><span class="line">            title: text,</span><br><span class="line">            description: nil,</span><br><span class="line">            thumbnail: nil,</span><br><span class="line">            media: nil</span><br><span class="line">        )</span><br><span class="line">        shareInfo(info, shareType: shareType)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="分享图片"><a href="#分享图片" class="headerlink" title="分享图片"></a>分享图片</h6><p>分享图片的话有一点是需要注意的。第三方对图片的缩略图大小是有限制的，通常是不能大于32kb（32768b），所以需要对传入的待分享图片的缩略图进行处理。<br>我们先增加一个<strong>UIImage</strong>类的扩展，用于压缩图片体积，备用。这个方法比较简单粗暴，如果有更科学的方法，大家请分享一下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">extension UIImage &#123;</span><br><span class="line">    /// 压缩图片大小</span><br><span class="line">    ///</span><br><span class="line">    /// - Parameters:</span><br><span class="line">    ///   - maxLength: 最大尺寸(比特)</span><br><span class="line">    ///   - compress: 压缩系数(0~1)</span><br><span class="line">    /// - Returns:</span><br><span class="line">    func compress(maxLength: Int, compress: CGFloat = 0.90) -&gt; Data? &#123;</span><br><span class="line">        let data = UIImageJPEGRepresentation(self, compress)</span><br><span class="line">        if (data?.count)! &lt; maxLength || compress &lt; 0&#123;</span><br><span class="line">            return data</span><br><span class="line">        &#125;</span><br><span class="line">        return self.compress(maxLength: maxLength, compress: compress-0.05)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们依旧在<strong><em>thirdParty</em></strong>里面增加一个内部使用的方法，来压缩图片缩略图。这里的3000是指32kb（32768b），博主强迫症，非得弄个整数不可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">fileprivate class func compress(thumbnail: UIImage) -&gt; UIImage? &#123;</span><br><span class="line">        if let data = UIImageJPEGRepresentation(thumbnail, 1) &#123;</span><br><span class="line">            if data.count &lt; 30000 &#123; return thumbnail &#125; // 无需压缩</span><br><span class="line">        &#125;</span><br><span class="line">        if let imageData = thumbnail.compress(maxLength: 30000) &#123;</span><br><span class="line">            if imageData.count &gt; 30000 &#123; // 还不符合尺寸要求？再压</span><br><span class="line">                if let compressedImage = UIImage(data: imageData) &#123;</span><br><span class="line">                    return compress(thumbnail: compressedImage)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                if let compressedImage = UIImage(data: imageData) &#123;</span><br><span class="line">                    return compressedImage</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return nil</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>最后，我们进行图片分享</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class func share(image: UIImage?, thumbnail: UIImage?, shareType: shareType) &#123;</span><br><span class="line">        guard let image = image else &#123; return &#125;</span><br><span class="line">        var compressedThumbnail: UIImage?</span><br><span class="line">        if thumbnail != nil &#123; // 如果传入了缩略图，也得判断一下尺寸是否合格</span><br><span class="line">            if let compressedImage = compress(thumbnail: thumbnail!) &#123;</span><br><span class="line">                compressedThumbnail = compressedImage</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else &#123; // 没有缩略图，那就取原图来压一个缩略图来用</span><br><span class="line">            if let compressedImage = compress(thumbnail: image) &#123;</span><br><span class="line">                compressedThumbnail = compressedImage</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        let info = MonkeyKing.Info(</span><br><span class="line">            title: nil,</span><br><span class="line">            description: nil,</span><br><span class="line">            thumbnail: compressedThumbnail,</span><br><span class="line">            media: .image(image)</span><br><span class="line">        )</span><br><span class="line">        shareInfo(info, shareType: shareType)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="分享链接"><a href="#分享链接" class="headerlink" title="分享链接"></a>分享链接</h6><p>如果分享的链接需要配缩略图，缩略图也要符合尺寸的要求。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class func share(url: String?, thumbnail: UIImage?, title: String?, description: String?, shareType: shareType) &#123;</span><br><span class="line">        guard let urlString = url else &#123; return &#125;</span><br><span class="line">        guard let url = URL(string: urlString) else &#123; return &#125;</span><br><span class="line">        </span><br><span class="line">        var compressedThumbnail: UIImage?</span><br><span class="line">        if thumbnail != nil &#123;</span><br><span class="line">            if let compressedImage = compress(thumbnail: thumbnail!) &#123;</span><br><span class="line">                compressedThumbnail = compressedImage</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        let info = MonkeyKing.Info(</span><br><span class="line">            title: title,</span><br><span class="line">            description: description,</span><br><span class="line">            thumbnail: compressedThumbnail,</span><br><span class="line">            media: .url(url)</span><br><span class="line">        )</span><br><span class="line">        shareInfo(info, shareType: shareType)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1275318-0a9f8335b2e55e8b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="呐，是不是很简单"></p>
+<h4 id="第三方授权"><a href="#第三方授权" class="headerlink" title="第三方授权"></a>第三方授权</h4><hr>
+<p>我们先在<strong><em>thirdParty</em></strong>里定义一个闭包来处理第三方授权后返回的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public typealias completionHandler = (_ info: [String: Any]?, _ response: URLResponse?, _ error: Error?) -&gt; Void</span><br></pre></td></tr></table></figure>
+<p>然后。。。就用这个方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  // MARK:-OAuth</span><br><span class="line">class func OAuth(platformType: platformType, completionHandler: @escaping completionHandler) &#123;</span><br><span class="line">        switch platformType &#123;</span><br><span class="line">        case .weChat:</span><br><span class="line">            MonkeyKing.oauth(for: .weChat) &#123; (info, response, error) in</span><br><span class="line">                completionHandler(info, response, error)</span><br><span class="line">            &#125;</span><br><span class="line">        case .qq:</span><br><span class="line">            MonkeyKing.oauth(for: .qq, scope: &quot;get_user_info&quot;) &#123; (info, response, error) in</span><br><span class="line">                completionHandler(info, response, error)   </span><br><span class="line">            &#125;</span><br><span class="line">        case .weibo:</span><br><span class="line">            MonkeyKing.oauth(for: .weibo) &#123; (info, response, error) in</span><br><span class="line">                completionHandler(info, response, error)</span><br><span class="line">            &#125;</span><br><span class="line">        default:</span><br><span class="line">            break</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>在我们需要第三方授权的地方使用这个方法，并在回调里处理返回的数据。<br>例如微信：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thirdParty.OAuth(platformType: .weChat) &#123; (dictionary, response, error) in</span><br><span class="line">            print(&quot;dictionary \(dictionary)&quot;)</span><br><span class="line">            print(&quot;error \(error)&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第三方支付"><a href="#第三方支付" class="headerlink" title="第三方支付"></a>第三方支付</h4><hr>
+<p>关于支付这个地方，其实demo不太好处理。但是我依然稍微封了一个方法，就待优化吧。<br>我们先在<strong><em>thirdParty</em></strong>里定义一个闭包来处理第三方支付后返回的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public typealias payCompletionHandler = (_ result: Bool) -&gt; Void</span><br></pre></td></tr></table></figure>
+<p>然后。。。就用这个方法。传入的urlString是发起订单后server端返回的数据拼接出来的，这一点还是不太方便的。例如微信的订单(此处WXPayModel是用户根据后台返回数据自己定义的)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let string = &quot;weixin://app/\(WXPayModel.appid!)/pay/?nonceStr=\(WXPayModel.noncestr!)&amp;package=Sign%3DWXPay&amp;partnerId=\(WXPayModel.partnerid!)&amp;prepayId=\(WXPayModel.prepayid!)&amp;timeStamp=\(UInt32(WXPayModel.timestamp!))&amp;sign=\(WXPayModel.sign!)&amp;signType=SHA1&quot;</span><br></pre></td></tr></table></figure>
+<p>获取到订单信息后拼接为url，作为参数传入以下方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// MARK:-Pay</span><br><span class="line">class func pay(platformType: platformType, urlString: String, completionHandler: @escaping payCompletionHandler) &#123;</span><br><span class="line">        switch platformType &#123;</span><br><span class="line">        case .weChat:</span><br><span class="line">            let order = MonkeyKing.Order.weChat(urlString: urlString)</span><br><span class="line">            MonkeyKing.deliver(order) &#123; result in</span><br><span class="line">                completionHandler(result)</span><br><span class="line">            &#125;</span><br><span class="line">        case .alipay:</span><br><span class="line">            let order = MonkeyKing.Order.alipay(urlString: urlString)</span><br><span class="line">            MonkeyKing.deliver(order) &#123; result in</span><br><span class="line">                completionHandler(result)</span><br><span class="line">            &#125;</span><br><span class="line">        default:</span><br><span class="line">            break</span><br><span class="line">        &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h4><hr>
+<p>更详细的使用，请大家移步至<a href="https://github.com/nixzhu/MonkeyKing" target="_blank" rel="noopener">MonkeyKing</a>下载官方的demo来学习吧~<br>MonkeyKing由国人开发，目前由四个大牛程序员维护。不引入SDK，方便快捷，减少项目体积，大家有兴趣可以试试~<br>我的demo地址<a href="https://git.oschina.net/smilek/MonkeyKingDemo" target="_blank" rel="noopener">demo</a>，因为分享、授权、支付等应用场景很多，所以demo里面并没有一一实现，仅仅提供该<strong><em>thridParty</em></strong>工具类以及相关类扩展。有什么疑问或建议，请留言~<br>最后，祝大家新年快乐~<br><img src="http://upload-images.jianshu.io/upload_images/1275318-1fbcc6040d3f93c6.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>动漫人物：2016/7月番《new game》 <em>凉风青叶</em> <em>八神光</em><br>B站：<a href="http://bangumi.bilibili.com/anime/5027" target="_blank" rel="noopener">http://bangumi.bilibili.com/anime/5027</a></p>
 </blockquote>
 
       
@@ -256,7 +268,7 @@ var _hmt = _hmt || [];
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Vapor</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
@@ -276,84 +288,16 @@ var _hmt = _hmt || [];
 
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/12/31/MonkeyKing——我要这SDK有何用？/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://fanxiaolu.top/2018/04/11/使用Swift4+Vapor写后端-示例&套路/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/04/12/使用Swift4+Vapor写后端-总结/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          使用Swift4+Vapor写后端-总结
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/04/10/使用Swift4+Vapor写后端-Droplet和Route/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用Swift4+Vapor写后端-Droplet和Route</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -368,48 +312,17 @@ var _hmt = _hmt || [];
         </div>
         
         
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见请求"><span class="toc-number">2.</span> <span class="toc-text">常见请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#get-post请求"><span class="toc-number">2.1.</span> <span class="toc-text">get/post请求</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目路由处理常见套路"><span class="toc-number">3.</span> <span class="toc-text">项目路由处理常见套路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单一文件"><span class="toc-number">3.1.</span> <span class="toc-text">单一文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vapor模板中的实现"><span class="toc-number">3.2.</span> <span class="toc-text">vapor模板中的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#工具类统一注册路由"><span class="toc-number">3.3.</span> <span class="toc-text">工具类统一注册路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过RouteCollection协议来注册路由组"><span class="toc-number">3.4.</span> <span class="toc-text">通过RouteCollection协议来注册路由组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后"><span class="toc-number">4.</span> <span class="toc-text">最后</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关参考"><span class="toc-number">5.</span> <span class="toc-text">相关参考</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
     </div>
 </aside>
 
 
 
-  
-  
-  
 
   
-
   
-    <section id="comments">
-      <div id="disqus_thread"></div>
-        <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'fanxiaolu'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </section>
-  
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
 
 
@@ -432,8 +345,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
