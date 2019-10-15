@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://fanxiaolu.top">
-  <title>Tag: live2d | fan小陆</title>
+  <title>Git忽略提交之.gitignore文件 | fan小陆</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="欢迎光临~いらっしゃいませ~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="fan小陆">
-<meta property="og:url" content="http://fanxiaolu.top/tags/live2d/index.html">
+  <meta name="description" content="前言  使用Git作为版本控制的管理工具，对于.gitignore文件绝对不陌生，但是你又真正的会使用它吗？最近接手了一个项目，里面没有添加.gitignore文件，添加上之后，一些应该忽略的文件仍然被管理，并未被忽略。在这里记录解决的过程。">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git忽略提交之.gitignore文件">
+<meta property="og:url" content="http://fanxiaolu.top/2019/10/15/Git忽略提交之.gitignore文件/index.html">
 <meta property="og:site_name" content="fan小陆">
-<meta property="og:description" content="欢迎光临~いらっしゃいませ~">
+<meta property="og:description" content="前言  使用Git作为版本控制的管理工具，对于.gitignore文件绝对不陌生，但是你又真正的会使用它吗？最近接手了一个项目，里面没有添加.gitignore文件，添加上之后，一些应该忽略的文件仍然被管理，并未被忽略。在这里记录解决的过程。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-15T02:58:38.074Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fan小陆">
-<meta name="twitter:description" content="欢迎光临~いらっしゃいませ~">
+<meta name="twitter:title" content="Git忽略提交之.gitignore文件">
+<meta name="twitter:description" content="前言  使用Git作为版本控制的管理工具，对于.gitignore文件绝对不陌生，但是你又真正的会使用它吗？最近接手了一个项目，里面没有添加.gitignore文件，添加上之后，一些应该忽略的文件仍然被管理，并未被忽略。在这里记录解决的过程。">
   
     <link rel="alternative" href="/atom.xml" title="fan小陆" type="application/atom+xml">
   
@@ -179,56 +181,96 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Git忽略提交之.gitignore文件" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/22/程序员也要谈恋爱 之 live2d 女友/" class="archive-article-date">
-  	<time datetime="2018-11-22T09:58:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/22/程序员也要谈恋爱 之 live2d 女友/">程序员也要谈恋爱 之 live2d 女友</a>
+    <h1 class="article-title" itemprop="name">
+      Git忽略提交之.gitignore文件
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/10/15/Git忽略提交之.gitignore文件/" class="archive-article-date">
+  	<time datetime="2019-10-15T02:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>  使用Git作为版本控制的管理工具，对于<code>.gitignore</code>文件绝对不陌生，但是你又真正的会使用它吗？最近接手了一个项目，里面没有添加<code>.gitignore</code>文件，添加上之后，一些应该忽略的文件仍然被管理，并未被忽略。在这里记录解决的过程。 <a id="more"></a></p>
+<h3 id="基础规则和语法"><a href="#基础规则和语法" class="headerlink" title="基础规则和语法"></a>基础规则和语法</h3><p>在使用Git的过程中，我们喜欢有的文件比如日志，临时文件，编译的中间文件等不要提交到代码仓库，这时就要设置相应的忽略规则，来忽略这些文件的提交。</p>
+<p>规则 作用<br>/mtk 过滤整个文件夹<br>*.zip 过滤所有.zip文件<br>/mtk/do.c 过滤某个具体文件<br>!/mtk/one.txt 追踪（不过滤）某个具体文件</p>
+<p><strong>注意：如果你创建.gitignore文件之前就push了某一文件，那么即使你在.gitignore文件中写入过滤该文件的规则，该规则也不会起作用，git仍然会对该文件进行版本管理。</strong></p>
+<p>配置语法<br>以斜杠“/”开头表示目录；<br>以星号“*”通配多个字符；<br>以问号“?”通配单个字符<br>以方括号“[]”包含单个字符的匹配列表；<br>以叹号“!”表示不忽略(跟踪)匹配到的文件或目录。</p>
+<p><strong>注意： git 对于 .gitignore配置文件是按行从上到下进行规则匹配的</strong></p>
+<h3 id="Git忽略文件提交的方法"><a href="#Git忽略文件提交的方法" class="headerlink" title="Git忽略文件提交的方法"></a>Git忽略文件提交的方法</h3><h4 id="在Git项目中定义-gitignore-文件"><a href="#在Git项目中定义-gitignore-文件" class="headerlink" title="在Git项目中定义 .gitignore 文件"></a>在Git项目中定义 .gitignore 文件</h4><p>这种方式通过在项目的某个文件夹下定义 .gitignore 文件，在该文件中定义相应的忽略规则，来管理当前文件夹下的文件的Git提交行为。</p>
+<p>.gitignore 文件是可以提交到共有仓库中，这就为该项目下的所有开发者都共享一套定义好的忽略规则。</p>
+<p>在 .gitingore 文件中，遵循相应的语法，在每一行指定一个忽略规则。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*.log</span><br><span class="line">*.temp</span><br><span class="line">/vendor</span><br></pre></td></tr></table></figure>
+<h4 id="在Git项目的设置中指定排除文件"><a href="#在Git项目的设置中指定排除文件" class="headerlink" title="在Git项目的设置中指定排除文件"></a>在Git项目的设置中指定排除文件</h4><p>这种方式只是临时指定该项目的行为，需要编辑当前项目下的 .git/info/exclude 文件，然后将需要忽略提交的文件写入其中。</p>
+<p>需要注意的是，这种方式指定的忽略文件的根目录是项目根目录</p>
+<h4 id="定义Git全局的-gitignore文件"><a href="#定义Git全局的-gitignore文件" class="headerlink" title="定义Git全局的.gitignore文件"></a>定义Git全局的.gitignore文件</h4><p>除了可以在项目中定义<code>.gitignore</code>文件外，还可以设置全局的<code>git .gitignore</code>文件来管理所有Git项目的行为。这种方式在不同的项目开发者之间是不共享的，是属于项目之上Git应用级别的行为。</p>
+<p>这种方式也需要创建相应的<code>.gitignore</code>文件，可以放在任意位置。然后在使用以下命令配置Git：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.excludesfile ~/.gitignore</span><br></pre></td></tr></table></figure>
+<h3 id="Git忽略规则"><a href="#Git忽略规则" class="headerlink" title="Git忽略规则"></a>Git忽略规则</h3><p>详细的忽略规则可以参考<a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener">官方英文文档</a></p>
+<h3 id="Git忽略规则优先级"><a href="#Git忽略规则优先级" class="headerlink" title="Git忽略规则优先级"></a>Git忽略规则优先级</h3><p>在 .gitingore 文件中，每一行指定一个忽略规则，Git 检查忽略规则的时候有多个来源，它的优先级如下（由高到低）：</p>
+<ul>
+<li>从命令行中读取可用的忽略规则</li>
+<li>当前目录定义的规则</li>
+<li>父级目录定义的规则，依次地推</li>
+<li>$GIT_DIR/info/exclude 文件中定义的规则</li>
+<li>core.excludesfile中定义的全局规则</li>
+</ul>
+<h3 id="Git忽略规则匹配语法"><a href="#Git忽略规则匹配语法" class="headerlink" title="Git忽略规则匹配语法"></a>Git忽略规则匹配语法</h3><p>在<code>.gitignore</code>文件中，每一行的忽略规则的语法如下：</p>
+<ul>
+<li><code>空格</code>不匹配任意文件，可作为分隔符，可用反斜杠转义</li>
+<li><code>#</code>开头的模式标识注释，可以使用反斜杠进行转义</li>
+<li><code>!</code>开头的模式标识否定，该文件将会再次被包含，<strong>如果排除了该文件的父级目录，则使用 ! 也不会再次被包含。</strong>可以使用反斜杠进行转义</li>
+<li><code>/</code>结束的模式只匹配文件夹以及在该文件夹路径下的内容，但是不匹配该文件</li>
+<li><code>/</code>开始的模式匹配项目跟目录</li>
+<li>如果一个模式不包含斜杠，则它匹配相对于当前 .gitignore 文件路径的内容，如果该模式不在 .gitignore 文件中，则相对于项目根目录</li>
+<li><code>**</code>匹配多级目录，可在开始，中间，结束</li>
+<li><code>?</code>通用匹配单个字符</li>
+<li><code>[]</code>通用匹配单个字符列表</li>
+</ul>
+<h3 id="常用匹配示例："><a href="#常用匹配示例：" class="headerlink" title="常用匹配示例："></a>常用匹配示例：</h3><ul>
+<li>bin/: 忽略当前路径下的bin文件夹，该文件夹下的所有内容都会被忽略，不忽略 bin 文件</li>
+<li>/bin: 忽略根目录下的bin文件</li>
+<li>/*.c: 忽略 cat.c，不忽略 build/cat.c</li>
+<li>debug/*.obj: 忽略 debug/io.obj，不忽略 debug/common/io.obj 和 tools/debug/io.obj</li>
+<li>**/foo: 忽略/foo, a/foo, a/b/foo等</li>
+<li>a/**/b: 忽略a/b, a/x/b, a/x/y/b等</li>
+<li>!/bin/run.sh: 不忽略 bin 目录下的 run.sh 文件</li>
+<li>*.log: 忽略所有 .log 文件</li>
+<li>config.php: 忽略当前路径的 config.php 文件</li>
+</ul>
+<h3 id="gitignore规则不生效"><a href="#gitignore规则不生效" class="headerlink" title=".gitignore规则不生效"></a>.gitignore规则不生效</h3><p>.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。<br>解决方法就是先把本地缓存删除（改变成未track状态），然后再提交:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &apos;update .gitignore&apos;</span><br></pre></td></tr></table></figure>
+<p><strong>git rm -r –cached .</strong>方法调用要慎重，因为该命令会删除暂存区或分支上的文件, 但本地又需要使用, 只是不希望这个文件被版本控制。结果就是自己本地有完整的文件，但是上传到远程仓库中会被删除，可能导致其他同事代码运行失败。解决方法就是其他同事都把本地仓库删除，重新从远端仓库拉取（pull）然后重新运行（rebuild）即可。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">OC</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">live2d</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -241,17 +283,133 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://fanxiaolu.top/2019/10/15/Git忽略提交之.gitignore文件/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/04/25/给SDAutolayout添加一个Swifty风格的点语法Extension/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">给SDAutolayout添加一个Swifty风格的点语法Extension</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础规则和语法"><span class="toc-number">2.</span> <span class="toc-text">基础规则和语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git忽略文件提交的方法"><span class="toc-number">3.</span> <span class="toc-text">Git忽略文件提交的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在Git项目中定义-gitignore-文件"><span class="toc-number">3.1.</span> <span class="toc-text">在Git项目中定义 .gitignore 文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在Git项目的设置中指定排除文件"><span class="toc-number">3.2.</span> <span class="toc-text">在Git项目的设置中指定排除文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#定义Git全局的-gitignore文件"><span class="toc-number">3.3.</span> <span class="toc-text">定义Git全局的.gitignore文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git忽略规则"><span class="toc-number">4.</span> <span class="toc-text">Git忽略规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git忽略规则优先级"><span class="toc-number">5.</span> <span class="toc-text">Git忽略规则优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git忽略规则匹配语法"><span class="toc-number">6.</span> <span class="toc-text">Git忽略规则匹配语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用匹配示例："><span class="toc-number">7.</span> <span class="toc-text">常用匹配示例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gitignore规则不生效"><span class="toc-number">8.</span> <span class="toc-text">.gitignore规则不生效</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+    <section id="comments">
+      <div id="disqus_thread"></div>
+        <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'fanxiaolu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+  
+
+  
 
 
           </div>
@@ -274,9 +432,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
